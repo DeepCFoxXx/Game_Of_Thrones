@@ -34,4 +34,12 @@ class House
     return house
   end
 
+  def self.all()
+    sql = "SELECT * FROM houses"
+    values = []
+    house_data = SqlRunner.run(sql, values)
+    houses = map_items(house_data)
+    return houses
+  end
+
 end
