@@ -64,9 +64,9 @@ class Member
   def self.all()
     sql = "SELECT * FROM members"
     values = []
-    student_data = SqlRunner.run(sql, values)
-    students = map_items(student_data)
-    return students
+    member_data = SqlRunner.run(sql, values)
+    members = map_items(member_data)
+    return members
   end
 
 end
