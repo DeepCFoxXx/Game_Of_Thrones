@@ -13,3 +13,7 @@ CREATE TABLE members (
   house_id INT8 REFERENCES houses(id),
   age INT4
 );
+
+--  createdb maester
+--  psql -d maester -f db/maester.sql
+--  ruby db/console.rb
