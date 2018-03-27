@@ -73,4 +73,17 @@ class Member
     return member_data.map { |member| Member.new(member) }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM members
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    member = Member.new(result)
+    return member
+  end
+
+  def format_name
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
 end
