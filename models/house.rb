@@ -42,4 +42,8 @@ class House
     return houses
   end
 
+  def self.map_items(house_data)
+    return house_data.map { |house| House.new(house) }
+  end
+
 end
