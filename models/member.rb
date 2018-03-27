@@ -69,4 +69,8 @@ class Member
     return members
   end
 
+  def self.map_items(member_data)
+    return member_data.map { |member| Member.new(member) }
+  end
+
 end
