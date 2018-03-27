@@ -38,7 +38,7 @@ class Member
   end
 
   def update()
-    sql = "UPDATE members 
+    sql = "UPDATE members
     SET
     (
     first_name,
@@ -51,6 +51,13 @@ class Member
     )
     WHERE id = $5"
     values = [@first_name, @last_name, @house_id, @age, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM members 
+    WHERE id = $1"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
