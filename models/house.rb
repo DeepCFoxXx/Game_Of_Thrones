@@ -25,4 +25,13 @@ class House
     @id = id.to_i
   end
 
-end   
+  def self.find(id)
+    sql = "SELECT * FROM houses
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql ,values).first
+    house = House.new(result)
+    return house
+  end
+
+end
