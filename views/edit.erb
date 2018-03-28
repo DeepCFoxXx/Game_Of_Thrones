@@ -12,5 +12,15 @@
       <input type="text" name="last_name" id="last_name" value="<%= @member.last_name%>"/>
     </div>
 
+    <div class="form-el">
+      <label for="house_select">Select House:</label>
+      <select name="house_id" id="house_select" selected="<%= @member.house_id %>">
+        <% @houses.each do |house| %>
+         <% if house.id == @member.house_id %>
+         <option value=<%= house.id %> selected><%= house.name.capitalize %></option>
+    </select>
+    </div>
+
   </div>
 </form>
+        
