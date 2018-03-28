@@ -16,11 +16,14 @@
       <label for="house_select">Select House:</label>
       <select name="house_id" id="house_select" selected="<%= @member.house_id %>">
         <% @houses.each do |house| %>
-         <% if house.id == @member.house_id %>
-         <option value=<%= house.id %> selected><%= house.name.capitalize %></option>
-    </select>
+        <% if house.id == @member.house_id %>
+        <option value=<%= house.id %> selected><%= house.name.capitalize %></option>
+        <% else %>
+        <option value=<%= house.id %>><%= house.name.capitalize %></option>
+        <% end %>
+        <% end %>
+      </select>
     </div>
 
   </div>
 </form>
-        
